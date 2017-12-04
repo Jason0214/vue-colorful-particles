@@ -1,6 +1,9 @@
 # vue-colorful-particles
 
-> A Vue.js project
+> A Vue.js project 
+
+## Description
+**Vue implementation of [sketch.js/particles](http://soulwire.github.io/sketch.js/examples/particles.html)**
 
 ## Build Setup
 
