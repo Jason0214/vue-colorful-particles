@@ -43,8 +43,13 @@
       }
     },
     props: ['config'],
+    computed: {
+      getConfig: function () {
+        return this.config
+      }
+    },
     watch: {
-      config: {
+      getConfig: {
         handler (val, oldVal) {
           this.changeConfig()
         },
@@ -181,13 +186,17 @@
           this.POSITION_LIST = this.config['position_list'] || this.POSITION_LIST
           this.SPAWN_INTERVAL = this.config['spawn_interval'] || this.SPAWN_INTERVAL
         }
+        if (this.config['colors'] && this.config['colors'].length > 0) {
+          this.COLORS = this.config['colors']
+        }
         this.SPAWN_RANGE = this.config['spawn_range'] || this.SPAWN_RANGE
         this.RADIUS_RANGE = this.config['radius_range'] || this.RADIUS_RANGE
-        this.COLORS = this.config['colors'] || this.COLORS
-        this.RADIUS_DECREASE_SPEED = this.config['colors'] || this.RADIUS_DECREASE_SPEED
+        this.RADIUS_DECREASE_SPEED = this.config['radius_decrease_speed'] || this.RADIUS_DECREASE_SPEED
         this.MAX_PARTICLES = this.config['max_particles'] || this.MAX_PARTICLES
         this.BACKGROUND = this.config['background'] || this.BACKGROUND
         // re config
+        pool = []
+        particles = []
         this.configContext(this.MAX_PARTICLES, this.SPAWN_RANGE[0], this.SPAWN_RANGE[1], this.POSITION_LIST)
         this.configParticle(this.RADIUS_DECREASE_SPEED, this.RADIUS_RANGE[0], this.RADIUS_RANGE[1], this.COLORS)
       }
