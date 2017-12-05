@@ -1,7 +1,7 @@
 {
-  "name": "vue-colorful-particles",
+  "name": "vue-colorful-particles-dev",
   "version": "1.0.0",
-  "description": "A Vue.js project",
+  "description": "Create Colorful Particles",
   "author": "Jason0214 <lujc.me@gmail.com>",
   "private": true,
   "scripts": {
