@@ -10,7 +10,7 @@
     if (Array.isArray(min) && max === undefined) {
       return min[Math.round(random(0, min.length - 1))]
     }
-    return Math.random() * (max - min) + min
+    return Math.random() * (max - min) + parseFloat(min)
   }
 
   function Particle () {
@@ -104,7 +104,7 @@
             let touch, max, i, j, n
             for (i = 0, n = context.touches.length; i < n; i++) {
               touch = context.touches[i]
-              max = random(spawnMin, spawnMax)
+              max = Math.round(random(spawnMin, spawnMax))
               for (j = 0; j < max; j++) {
                 context.spawn(touch.x, touch.y)
               }
@@ -131,7 +131,7 @@
           console.log(this.SPAWN_INTERVAL)
           this.intervalVar = setInterval(() => {
             for (let i = 0; i < positionList.length; i++) {
-              let max = random(spawnMin, spawnMax)
+              let max = Math.round(random(spawnMin, spawnMax))
               for (let j = 0; j < max; j++) {
                 context.spawn(positionList[i][0], positionList[i][1])
               }
